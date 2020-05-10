@@ -1,0 +1,15 @@
+@import './partials/variables';
+@import './partials/mixins';
+
+
+body{ 
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.container{
+    width: 1110px;
+    margin: 0 auto;
+    @include mode-switch('color', 'textRegular');
+}

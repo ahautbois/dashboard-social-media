@@ -1,0 +1,50 @@
+// ========== COLORS ============
+
+$white: #FFFFFF;
+$veryDarkBlue: #1E202A;
+$limeGreen: #1DB489;
+$brightRed: #DC414C;
+$switchBGOne: #378FE6;
+$switchBGTwo: #3EDA82;
+$paleBlue: #f7f9ff;
+$darkBGPattern: #1F212E;
+$lightBlue: #F0F2FA;
+$darkDesatBlue: #252A41;
+$darkBlue: #63687E;
+$desatBlue: #8B97C6;
+
+
+// Switch Button
+$switchLT: #AEB3CB;
+$switchDT: $veryDarkBlue;
+
+
+// * Social Media *
+
+$facebook:#00BFFF;
+$twitter: #1CA0F2;
+$instagramOne:#FDC468;
+$instagramTwo: #DF4996;
+$youTube: #C4032A;
+
+
+
+
+$modes: (
+    light: (
+        backgroundColor: $white,
+        topBgPattern: $paleBlue,
+        cardBg: $lightBlue,
+        textRegular: $darkBlue,
+        textBold: $veryDarkBlue,
+        switchButton: $switchLT,
+    ),
+    dark:(
+        backgroundColor: $veryDarkBlue,
+        topBgPattern: $darkBGPattern,
+        cardBg: $darkDesatBlue,
+        textRegular: $desatBlue,
+        textBold: $white,
+        switchButton: $switchDT,
+    ),
+)
