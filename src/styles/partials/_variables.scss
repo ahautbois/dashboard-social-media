@@ -14,6 +14,10 @@ $darkBlue: #63687E;
 $desatBlue: #8B97C6;
 
 
+$hoverLightBlue: #E1E3F0;
+$hoverdarkDesatBlue: #333A56;
+
+
 // Switch Button
 $switchLT: #AEB3CB;
 $switchDT: $veryDarkBlue;
@@ -21,20 +25,21 @@ $switchDT: $veryDarkBlue;
 
 // * Social Media *
 
-$facebook:#00BFFF;
-$twitter: #1CA0F2;
+$twitter:#00BFFF;
+$facebook: #1CA0F2;
 $instagramOne:#FDC468;
 $instagramTwo: #DF4996;
-$youTube: #C4032A;
+$youtube: #C4032A;
 
 
 
 
 $modes: (
     light: (
-        backgroundColor: $white,
+        backgroundColor: $white, 
         topBgPattern: $paleBlue,
         cardBg: $lightBlue,
+        bgHoverCard: $hoverLightBlue,
         textRegular: $darkBlue,
         textBold: $veryDarkBlue,
         switchButton: $switchLT,
@@ -43,6 +48,7 @@ $modes: (
         backgroundColor: $veryDarkBlue,
         topBgPattern: $darkBGPattern,
         cardBg: $darkDesatBlue,
+        bgHoverCard: $hoverdarkDesatBlue,
         textRegular: $desatBlue,
         textBold: $white,
         switchButton: $switchDT,

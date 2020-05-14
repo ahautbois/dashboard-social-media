@@ -1,7 +1,14 @@
 import React, {useState} from 'react';
 // import logo from './logo.svg';
-import './styles/App.scss';
 import Header from './components/Header';
+import FollowersCard from './components/FollowersCard';
+import DailyView from './components/DailyView';
+import followerTotalData from './followerData';
+
+
+
+import './styles/App.scss';
+
 
 
 function App() {
@@ -11,6 +18,15 @@ function App() {
   const handleChange = () => {
     setIsSwitch(!isSwitch);
   }
+
+  let sliceFollowers = (num, len) => +String(num).slice(0, len);
+
+  const socialMediaList = followerTotalData.map(media => <FollowersCard key={media.id} info={media} sliceNumb={sliceFollowers}/>);
+
+  const dailyData = followerTotalData.map(media => ({social: media.socialMedia, stats: media.dailyView}));
+  const dailyList = dailyData.map((daily, index) => <DailyView key={index} info={daily} sliceNumb={sliceFollowers}/>);
+
+  
 
   return (
     <div className={`App theme-${isSwitch ? 'light' : 'dark'}`}>
@@ -32,7 +48,15 @@ function App() {
     */}
       <Header themeSwitch={isSwitch} themeFunc={handleChange}/>
       <main>
-        
+          <section className='container card-list'>
+            {socialMediaList}
+          </section>
+          <section className='container'>
+            <h2>Overview - Today</h2>
+            <div className='card-list'>
+              {dailyList}
+            </div>
+          </section>
       </main>
     </div>
   );
