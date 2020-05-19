@@ -23,7 +23,7 @@ function App() {
 
   const socialMediaList = followerTotalData.map(media => <FollowersCard key={media.id} info={media} sliceNumb={sliceFollowers}/>);
 
-  const dailyData = followerTotalData.map(media => ({social: media.socialMedia, stats: media.dailyView}));
+  const dailyData = followerTotalData.map(media => ({social: media.socialMedia, link: media.linkProfile, stats: media.dailyView}));
   const dailyList = dailyData.map((daily, index) => <DailyView key={index} info={daily} sliceNumb={sliceFollowers}/>);
 
   

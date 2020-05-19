@@ -10,6 +10,15 @@ body{
     font-weight: 400;
 }
 
+.App{
+    min-height: 100vh;
+}
+
+a{
+    @include mode-switch('color', 'textRegular');
+    text-decoration: none;
+}
+
 .container{
     width: 1110px;
     margin: 0 auto;
@@ -41,8 +50,22 @@ section {
         @include mode-switch('background-color', 'cardBg');
         @include mode-switch('color', 'textRegular');
         border-radius: 0.5em;
+        position: relative;
+        cursor: pointer;
         &:hover {
             @include mode-switch('background-color', 'bgHoverCard');
+        }
+        .link {
+            &::after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+            }
         }
     }
     .bounce-rate{
@@ -73,4 +96,25 @@ section {
 }
 .red{
     color: $brightRed;
+}
+
+
+@media (max-width: 992px){
+    .card-list{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1200px){
+    .container{
+        width: 100%;
+        padding: 0 2rem;
+    }
+    
 }

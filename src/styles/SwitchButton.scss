@@ -49,6 +49,10 @@
     transition: .4s;
 }
 
+input:checked+.slider{
+    background: $blueGrey;
+}
+
 input:checked+.slider:before {
     background: $white;
 }
@@ -69,4 +73,14 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+@media (max-width: 768px){
+    .container-switch{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .switch{
+        justify-self: end;
+    }
 }

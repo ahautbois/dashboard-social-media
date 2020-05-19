@@ -6,7 +6,6 @@
 .card-total{
     text-align: center;
     padding: 1.5rem 0;
-    position: relative;
     overflow: hidden;
     &:before{
         content: '';
@@ -16,20 +15,43 @@
         top: 0;
         height: 4px;
     }
-    &.facebook::before{
-        background-color: $facebook;
+    .link::before{
+        vertical-align: middle;
+        margin-right: 0.5rem;
     }
-    &.twitter::before {
-        background-color: $twitter;
+    &.facebook{
+        &::before {
+            background-color: $facebook;
+        }
+        .link::before{
+            content: url('../img/icon-facebook.svg');
+        }
     }
-    &.instagram::before {
-        background: $instagramOne;
-        background: linear-gradient(90deg, $instagramOne 0%, $instagramTwo 100%);
+    &.twitter{
+        &::before {
+            background-color: $twitter;
+        }
+        .link::before {
+            content: url('../img/icon-twitter.svg');
+        }
     }
-    &.youtube:before{
-        background-color: $youtube;
+    &.instagram{
+        &::before {
+            background: $instagramOne;
+            background: linear-gradient(90deg, $instagramOne 0%, $instagramTwo 100%);
+        }
+        .link::before {
+            content: url('../img/icon-instagram.svg');
+        }
     }
-
+    &.youtube{
+        &:before {
+            background-color: $youtube;
+        }
+        .link::before {
+            content: url('../img/icon-youtube.svg');
+        }
+    }
     .followers{
         font-size: 3.5em;
         @include mode-switch('color', 'textBold');
