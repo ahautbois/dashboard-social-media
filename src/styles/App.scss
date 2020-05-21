@@ -1,0 +1,120 @@
+@import './partials/variables';
+@import './partials/mixins';
+
+
+
+
+body{ 
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.App{
+    min-height: 100vh;
+}
+
+a{
+    @include mode-switch('color', 'textRegular');
+    text-decoration: none;
+}
+
+.container{
+    width: 1110px;
+    margin: 0 auto;
+    @include mode-switch('color', 'textRegular');
+}
+
+@each $mode-name, $mode-color in $modes {
+    &.theme-#{$mode-name} {
+        background-color: map-get(map-get($modes, $mode-name), backgroundColor)
+    }
+}
+
+main {
+    margin-top: -100px;
+}
+p {
+    margin: 0;
+}
+section {
+    padding: 0 0 1.5rem;
+}
+.card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 20px;
+    align-items: center;
+    .card{
+        @include mode-switch('background-color', 'cardBg');
+        @include mode-switch('color', 'textRegular');
+        border-radius: 0.5em;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+            @include mode-switch('background-color', 'bgHoverCard');
+        }
+        .link {
+            &::after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+            }
+        }
+    }
+    .bounce-rate{
+        font-size: 0.75rem;
+        font-weight: 700;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 4px 5px 4px;
+            margin-right: 0.2rem;
+        }
+
+        &.positive:before {
+            border-color: transparent transparent $limeGreen transparent;
+        }
+
+        &.negative:before {
+            border-color: transparent transparent $brightRed transparent;
+            transform: rotate(180deg);
+        }
+    }
+}
+.green{
+    color: $limeGreen;
+}
+.red{
+    color: $brightRed;
+}
+
+
+@media (max-width: 992px){
+    .card-list{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1200px){
+    .container{
+        width: 100%;
+        padding: 0 2rem;
+    }
+    
+}

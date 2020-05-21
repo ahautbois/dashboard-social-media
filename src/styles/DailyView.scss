@@ -1,0 +1,58 @@
+.cardDaily{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 1.5rem 1rem;
+    &.facebook{
+        order: 1;
+    }
+    &.instagram{
+        order: 2;
+    }
+    &.twitter{
+        order: 3;
+    }
+    &.youtube{
+        order: 4;
+    }
+    .title{
+        grid-area: title;
+        font-weight: 700;
+        position: relative;
+        margin-bottom: 1rem;
+        &::after{
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &.facebook::after{
+            content: url('../img/icon-facebook.svg');
+        }
+        &.twitter::after {
+            content: url('../img/icon-twitter.svg');
+        }
+        &.instagram::after {
+            content: url('../img/icon-instagram.svg');
+        }
+        &.youtube::after {
+            content: url('../img/icon-youtube.svg');
+        }
+    }
+    .views{
+        grid-area: views;
+        font-size: 2em;
+        align-self: end;
+        line-height: 1;
+    }
+    .bounce-rate{
+        grid-area: bounceRate;
+        text-align: right;
+        align-self: end;
+        line-height: 1;
+    }
+    grid-template-areas: "title title"
+    "views bounceRate";
+}

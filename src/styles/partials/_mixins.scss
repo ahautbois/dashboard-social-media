@@ -1,0 +1,11 @@
+@import './variables';
+
+@mixin mode-switch($key, $color) {
+    @each $mode-name, $mode-color in $modes {
+        .theme-#{$mode-name} & {
+            #{$key}: map-get(map-get($modes, $mode-name), $color)
+        }
+    }
+
+}
+

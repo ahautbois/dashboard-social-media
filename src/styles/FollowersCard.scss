@@ -1,0 +1,70 @@
+@import './partials/variables';
+@import './partials/mixins';
+
+
+
+.card-total{
+    text-align: center;
+    padding: 1.5rem 0;
+    overflow: hidden;
+    &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 4px;
+    }
+    .link::before{
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+    &.facebook{
+        &::before {
+            background-color: $facebook;
+        }
+        .link::before{
+            content: url('../img/icon-facebook.svg');
+        }
+    }
+    &.twitter{
+        &::before {
+            background-color: $twitter;
+        }
+        .link::before {
+            content: url('../img/icon-twitter.svg');
+        }
+    }
+    &.instagram{
+        &::before {
+            background: $instagramOne;
+            background: linear-gradient(90deg, $instagramOne 0%, $instagramTwo 100%);
+        }
+        .link::before {
+            content: url('../img/icon-instagram.svg');
+        }
+    }
+    &.youtube{
+        &:before {
+            background-color: $youtube;
+        }
+        .link::before {
+            content: url('../img/icon-youtube.svg');
+        }
+    }
+    .followers{
+        font-size: 3.5em;
+        @include mode-switch('color', 'textBold');
+        font-weight: 700;
+        line-height: 1.2;
+        margin-top: 1rem;
+    }
+    .caption{
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 0.875em;
+    }
+    .bounce-rate{
+        margin-top: 1.5rem;
+    }
+}
