@@ -1,9 +1,13 @@
+@import './partials/variables';
+@import './partials/mixins';
+
 .cardDaily{
     display: grid;
     justify-content: center;
     align-items: center;
     grid-template-columns: 1fr 1fr;
     padding: 1.5rem 1rem;
+    grid-template-areas: "title title" "views bounceRate";
     &.facebook{
         order: 1;
     }
@@ -21,14 +25,14 @@
         font-weight: 700;
         position: relative;
         margin-bottom: 1rem;
-        &::after{
+        &::after {
             display: inline-block;
             position: absolute;
             right: 0;
             top: 50%;
             transform: translateY(-50%);
         }
-        &.facebook::after{
+        &.facebook::after {
             content: url('../img/icon-facebook.svg');
         }
         &.twitter::after {
@@ -53,6 +57,5 @@
         align-self: end;
         line-height: 1;
     }
-    grid-template-areas: "title title"
-    "views bounceRate";
+    
 }
